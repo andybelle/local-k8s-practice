@@ -12,3 +12,5 @@ kubectl get all
 kubectl port-forward pod/go-test1 8001:8000
 
 kubectl apply -f pod.yaml,service.yaml
+
+kubectl apply -f deployment.yaml

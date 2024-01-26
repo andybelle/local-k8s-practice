@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: go-test1-deployment
+  labels:
+    type: demo
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      type: demo
+  template:
+    metadata:
+      labels:
+        type: demo
+    spec:
+      containers:
+        - name: go-test1
+          image: localhost:5000/go-test1
+          ports:
+            - containerPort: 8000
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: go-test2-deployment
+  labels:
+    type: demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      type: demo
+  template:
+    metadata:
+      labels:
+        type: demo
+    spec:
+      containers:
+        - name: go-test2
+          image: localhost:5000/go-test2:v1
+          ports:
+            - containerPort: 8000
