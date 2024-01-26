@@ -4,6 +4,8 @@ WORKDIR /
 
 COPY . .
 
+RUN go mod init main
+RUN go mod tidy -e
 RUN go build -o main
 
 FROM alpine:latest
