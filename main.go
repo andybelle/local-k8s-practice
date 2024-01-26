@@ -12,7 +12,7 @@ func main() {
 
 	router.GET("/", func(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{
-			"message": "Hello, Golang with Gin! test1",
+			"message": "Hello, Golang with Gin! test2",
 		})
 	})
 
